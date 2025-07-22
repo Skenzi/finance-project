@@ -3,8 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from "react-router";
 import router from './app/routes';
 
-createRoot(document.getElementById('app')!).render(
-    <StrictMode>
-        <RouterProvider router={router} />
-    </StrictMode>
-);
+const root = document.getElementById('app');
+
+if (root) {
+    createRoot(root).render(
+        <StrictMode>
+            <RouterProvider router={router} />
+        </StrictMode>
+    );
+}
